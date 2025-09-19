@@ -257,18 +257,27 @@ const HealthBenefitsSection = () => {
                             <img src="/images/heart.webp" alt="Lycopene" className="w-full h-full object-contain" />
                         </div>
                     </div>
-
                     {/* Mobile stacked content */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: "easeOut" }}
+                        variants={{
+                            hidden: { opacity: 0 },
+                            show: {
+                                opacity: 1,
+                                transition: { staggerChildren: 0.3 },
+                            },
+                        }}
+                        initial="hidden"
+                        whileInView="show"
                         viewport={{ once: true, amount: 0.3 }}
                         className="lg:hidden flex mt-24 flex-col pl-5 pr-6 items-center space-y-10"
                     >
                         {healthItems.map((item, index) => (
-                            <div
+                            <motion.div
                                 key={index}
+                                variants={{
+                                    hidden: { opacity: 0, y: 30 },
+                                    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+                                }}
                                 className={`flex flex-col gap-2 ${index === healthItems.length - 1 ? "mb-14" : ""
                                     }`}
                             >
@@ -281,7 +290,7 @@ const HealthBenefitsSection = () => {
                                 <p className="text-gray-900 text-[0.8rem] max-w-xs mx-auto">
                                     {item.description}
                                 </p>
-                            </div>
+                            </motion.div>
                         ))}
                     </motion.div>
                 </div>
