@@ -250,7 +250,7 @@ const HealthBenefitsSection = () => {
                         <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 w-15 h-15">
                             <img src="/images/vitamin.webp" alt="Carotenoids" className="w-full h-full object-contain" />
                         </div>
-                        <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 w-15 h-15">
+                        <div className="absolute -right-7 top-1/2 transform -translate-y-1/2 w-15 h-15">
                             <img src="/images/leaf.webp" alt="Chlorophyll" className="w-full h-full object-contain" />
                         </div>
                         <div className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 w-15 h-15">
